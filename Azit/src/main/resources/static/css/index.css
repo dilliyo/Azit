@@ -1,0 +1,93 @@
+/*!
+ * Start Bootstrap - Modern Business (https://startbootstrap.com/template-overviews/modern-business)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
+ */
+html{
+	font-family:NanumBarunGothicBold;
+
+ }
+body {
+  padding-top: 54px;
+}
+
+a{
+	color: #534C4C;
+    font-family: NanumGothicBold,sans-serif;
+    letter-spacing: -.2px;
+    font-weight: bold;
+}
+
+.logo{
+	margin-left:10px;
+	width: 120px;
+    height: auto;
+}
+
+
+
+.my-4{
+	color:#534C4C;
+	font-family: NanumGothicBold,sans-serif;
+    text-align: center;
+    letter-spacing: -.5px;
+    line-height: 3;
+    font-weight: bold;
+}
+
+.bg-dark{background-color:#fff!important;}
+
+.navbar-dark .navbar-nav .nav-link{
+    color: #534C4C;
+    font-family: NanumGothicBold,sans-serif;
+    
+    letter-spacing: -.5px;
+    line-height: 3;
+    font-weight: bold;
+    padding-left: 30px;
+    }
+
+.card-text{
+	font-size:11px;
+	color: #534C4C;
+	}
+
+.carousel-item {
+  height: 65vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.portfolio-item {
+  margin-bottom: 30px;
+}
+
+
+.navbar-dark .navbar-toggler {
+    color: #534C4C;
+}
+
+.navbar-toggler-icon{
+	margin-right:10px;
+}
+
+
+a.on{
+	font-size: 14px;
+}
+
+.logo.on {
+    margin-left: 30px;
+    width: 90px;
+    height: auto;
+}
+
+.navbar.on{
+	padding: 0rem 0rem;
+	border-bottom: 2px solid rgba(83,76,76,0.2);
+}
+
