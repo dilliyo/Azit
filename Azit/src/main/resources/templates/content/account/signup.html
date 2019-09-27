@@ -36,46 +36,51 @@
 			<div class="login100-more"></div>
 
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
-				<form class="login100-form validate-form" method="post" name="signup" action="signup/pro">
+				<form class="login100-form validate-form" method="post" name="signup" th:action="@{signup/pro}">
 					<span class="login100-form-title p-b-59">
 						Sign Up
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate="Name is required">
 						<span class="label-input100">Full Name</span>
-						<input class="input100" type="text" id="userName" name="userName" placeholder="Name...">
+						<input class="input100" type="text" id="userName" name="userName" placeholder="Name..." autocomplete="off" required="required">
 						<span class="focus-input100"></span>
+						<font id="chkName" size="2"></font>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 						<span class="label-input100">Email</span>
-						<input class="input100" type="text" name="userEmail" id="userEmail" placeholder="Email addess...">
+						<input class="input100" type="text" name="userEmail" id="userEmail" placeholder="Email addess..." autocomplete="off" required="required">
 						<span class="focus-input100"></span>
+						<font id="chkEmail" size="2"></font>
 					</div>
 					
-					<div class="wrap-input100 validate-input" data-validate="Birth Day is required">
-						<span class="label-input100">Birth Day</span>
-						<input class="input100" type="text" id="userBirth" name="userBirth" maxlength="8" placeholder="Birth Day...">
-						<span class="focus-input100"></span>
-					</div>
-
-					<div class="wrap-input100 validate-input" data-validate="Phone Number is required">
-						<span class="label-input100">Phone</span>
-						<input class="input100" type="text" id="userPhone" name="userPhone" maxlength="13" placeholder="Phone Number...">
-						<span class="focus-input100"></span>
-					</div>
-
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
 						<span class="label-input100">Password</span>
-						<input class="input100" type="text" name="userPassword" id="userPassword" placeholder="*************">
+						<input class="input100" type="password" name="userPassword" id="userPassword" placeholder="*************" required="required">
 						<span class="focus-input100"></span>
+						<font id="chkPass" size="2"></font>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Repeat Password is required">
 						<span class="label-input100">Repeat Password</span>
-						<input class="input100" type="text" name="repeat-pass"  id="repeat-pass" placeholder="*************">
+						<input class="input100" type="password" name="repeat-pass"  id="repeat-pass" placeholder="*************" required="required">
 						<span class="focus-input100"></span>
-						<font id="chkNotice" size="2"></font>
+						<font id="chkRepeat-pass" size="2"></font>
+					</div>
+					
+					<div class="wrap-input100 validate-input" data-validate="Phone Number is required">
+						<span class="label-input100">Phone</span>
+						<input class="input100" type="text" id="userPhone" name="userPhone" maxlength="13" placeholder="Phone Number..." autocomplete="off" required="required">
+						<span class="focus-input100"></span>
+						<font id="chkPhone" size="2"></font>
+					</div>
+					
+					<div class="wrap-input100 validate-input" data-validate="Birth Day is required">
+						<span class="label-input100">Birth Day</span>
+						<input class="input100" type="text" id="userBirth" name="userBirth" maxlength="10" placeholder="Birth Day..." autocomplete="off" required="required">
+						<span class="focus-input100"></span>
+						<font id="chkBirth" size="2"></font>
 					</div>
 
 					<div class="flex-m w-full p-b-33">
@@ -97,7 +102,7 @@
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn" type="submit">
+							<button class="login100-form-btn" type="submit" id="signupSubmit" disabled="true">
 								Sign Up
 							</button>
 						</div>

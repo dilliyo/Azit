@@ -25,8 +25,11 @@
         <ul class="navbar-nav ml-auto">
         <li th:each="n: ${nav}">
         	<a class="nav-link" href="" th:href="@{/{navName}(navName=${n.navNameEn})}" th:text="${n.navNameKr}" ></a>
-        	
+   
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="" th:href="@{/{navName}(navName=${nav[3].navNameEn})}" th:text="${nav[3].navNameKr}"></a>
+          </li>
         	<!-- 
           <li class="nav-item">
             <a class="nav-link" href="space">공간찾기</a>

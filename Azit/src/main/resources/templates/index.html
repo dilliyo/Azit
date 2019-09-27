@@ -20,7 +20,12 @@
 	<th:block th:include="include/include-script"></th:block>
 
 	<!-- Navigation -->
-	<nav th:replace="nav/nav"></nav>
+	<th:block th:if="${signOn} != 'signOn'">
+		<nav th:replace="nav/nav"></nav>
+	</th:block>
+	<th:block th:unless="${signOn} != 'signOn'">
+		<nav th:replace="nav/nav_before"></nav>
+	</th:block>
 
 	<!-- Header -->
 	

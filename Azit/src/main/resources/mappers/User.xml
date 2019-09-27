@@ -11,6 +11,15 @@
 		select * from User
 	</select>
 	
+	<select id="emailCheck" resultType="long">
+		select count(*) from User where user_email=#{userEmail}
+	</select>
+	
+	<select id="signIn" resultType="User">
+		select * from User where user_email=#{userEmail} AND user_password=#{userPassword}
+	</select>
+	
+	
 	<!-- insert part -->
 	
 	
@@ -18,6 +27,8 @@
 		insert into User(user_name, user_email, user_password, user_birthday, user_phone) values 
 		(#{userName}, #{userEmail}, #{userPassword}, #{userBirth}, #{userPhone})
 	</insert>
+	
+	
 	
 
 </mapper>

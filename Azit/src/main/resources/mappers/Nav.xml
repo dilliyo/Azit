@@ -11,46 +11,6 @@
 		select * from Nav
 	</select>
 	
-	<!-- 
-	<select id="findNav" parameterType="Nav" resultType="Team">
-		select * from teamtable
-		<where>
-		    <if test="teamNameKr != null">
-		         team_name_kr = #{teamNameKr}
-		    </if>
-		    <if test="teamYear != null">
-		        AND team_year = #{teamYear}
-		    </if>
-		    <if test="teamLastResult != null">
-		        AND team_last_result = #{teamLastResult}
-		    </if>
-		  </where>
-	</select>
 	
-	 -->
-	 
-	<!-- insert part 	
-	
-	<insert id="addNav" parameterType="Nav">
-		insert into nav(nav_name_kr, nav_name_en) values 
-		(#{navNameKr}, #{navNameEn})
-	</insert>
-	-->
-	
-	<!-- update part 
-	<update id="updateNav">
-		update nav
-		set nav_name_kr = #{navNameKr}
-		where nav_name_kr = #{navNameKr}	
-	</update>
-	
-	 -->
-	<!-- delete part 
-	
-	<delete id="deleteNav">
-		delete from nav
-		where nav_name_kr = #{navNameKr}		
-	</delete>
-	-->
 	
 </mapper>

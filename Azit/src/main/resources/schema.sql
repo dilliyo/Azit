@@ -12,7 +12,7 @@ user_email varchar(100) not null primary key,
 user_password varchar(100) not null,
 user_birthday varchar(100) not null,
 user_phone varchar(100) not null,
-user_location varchar(100),
+user_addr varchar(100),
 user_date timestamp default now()
 
 );
