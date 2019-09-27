@@ -91,3 +91,21 @@ a.on{
 	border-bottom: 2px solid rgba(83,76,76,0.2);
 }
 
+.userbutton{
+	float:left;
+	width:160px;
+	height:64px;
+}
+
+.user_icon img{
+	width:25px;
+	height:auto;
+	float:left;
+	margin-right:10px;
+	padding-top:10px;
+}
+
+.user_icon:hover {
+	opacity: 0.5;
+
+}

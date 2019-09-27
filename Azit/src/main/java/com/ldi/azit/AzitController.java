@@ -51,10 +51,10 @@ public class AzitController {
 		
 			if (signinUser != null){
 			
-				String Email = signinUser.getUserEmail();
+				String Name = signinUser.getUserName();
 				
 				m.put("signOn", "signOn");
-				m.put("userName", Email);
+				m.put("userName", Name);
 			}
         return "index";
     }
@@ -119,9 +119,15 @@ public class AzitController {
 		} else {
 			return "redirect:/signin";
 		}
-		
-		
 	}
+	
+	 @RequestMapping(path="/signout", method = {RequestMethod.GET})
+	    public String logout(HttpSession session) {
+	        session.removeAttribute("check");
+	 
+	        return "redirect:/";
+	 
+	    }
 
 	
 	
