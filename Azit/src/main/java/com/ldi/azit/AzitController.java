@@ -76,7 +76,7 @@ public class AzitController {
 		
 		m.put("nav", navService.getNav());
 		
-		m.put("template", "content/account/signup");
+		m.put("template", "content/sign/signup");
 		m.put("key", "sign");
 		
 		return "index";
@@ -102,17 +102,17 @@ public class AzitController {
     public String signin(ModelMap m) {
 		
 		m.put("nav", navService.getNav());
-		m.put("template", "content/account/signin");
+		m.put("template", "content/sign/signin");
 		m.put("key", "sign");
 		
         return "index";
     }
 	
 	@RequestMapping(path="/signin/pro", method = {RequestMethod.POST}, name="signin")
-	public String signinpro(String userEmail, String userPassword, HttpSession session){
+	public String signinpro(ModelMap m, String userEmail, String userPassword, HttpSession session){
 		
 		User signinUser = userService.signIn(userEmail,userPassword);
-		log.debug(signinUser.getUserEmail());
+		
 		if(signinUser !=null) {
 			session.setAttribute("check",signinUser);
 			return "redirect:/";
@@ -121,12 +121,42 @@ public class AzitController {
 		}
 	}
 	
+// 로그아웃
 	 @RequestMapping(path="/signout", method = {RequestMethod.GET})
 	    public String logout(HttpSession session) {
 	        session.removeAttribute("check");
 	 
 	        return "redirect:/";
 	 
+	    }
+// 마이페이지
+		@RequestMapping("/mypage")
+		public String mypage(ModelMap m) {
+			
+			m.put("nav", navService.getNav());
+			
+			m.put("template", "content/mypage/mypage");
+			
+			
+			return "index";
+		}
+		
+		@RequestMapping(path = "/mypage", method = {RequestMethod.POST,RequestMethod.GET})
+	    public String mypage(User u, ModelMap m, HttpSession session) {
+
+			m.put("nav", navService.getNav());
+			
+			m.put("template", "content/mypage/mypage");
+			
+			User signinUser = (User) session.getAttribute("check");
+			
+				if (signinUser != null){
+				
+					String Name = signinUser.getUserName();
+					
+					m.put("userName", Name);
+				}
+	        return "index";
 	    }
 
 	

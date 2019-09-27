@@ -4,6 +4,7 @@ var passChk = false;
 var repassChk = false;
 var phoneChk = false;
 var birthChk = false;
+
 //이름 유효성검사
 var userNameChk = /^[가-힣]{2,6}$/;
 
@@ -231,8 +232,9 @@ var userBirthChk = false;
              $("#signupSubmit").attr("disabled", true);
              $(this).val("");
  		}
- }); //End of method /*
+ });
  
+ // 회원정보 전체 체크
  function submitBtnChk(){
 	 if(nameChk && emailChk && passChk && repassChk && phoneChk && birthChk == true){
 		 $("#signupSubmit").attr("disabled", false);
@@ -240,3 +242,4 @@ var userBirthChk = false;
 		 $("#signupSubmit").attr("disabled", true);
 	 }
  }
+

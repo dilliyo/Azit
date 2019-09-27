@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Azit</title>
+
+<!-- Custom styles for this template -->
+<link href="css/mypage.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+	<!-- Page Content -->
+	<div class="container">
+
+		<!-- Page Heading/Breadcrumbs -->
+		<h1 class="mt-4 mb-3 mypage-title">마이페이지</h1>
+
+		<ol class="breadcrumb">
+		</ol>
+
+		<!-- Content Row -->
+		<div class="row">
+			<!-- Sidebar Column -->
+			<div class="col-lg-3 mb-4">
+				<div class="list-group">
+					<div class="mypage-user-box">
+
+						<img class="mypage-user-icon" src="img/icons/user_1.png" th:text="${userName} + 님">
+
+					</div>
+					
+					<div class="mb-4" id="accordion" role="tablist"	aria-multiselectable="true">
+						<div class="card">
+							<div class="card-header" role="tab" id="headingOne">
+								<h5 class="mb-0">
+									<a class="list-group-item" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">회원정보관리</a>
+								</h5>
+							</div>
+							<div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+								<div class="card-body">
+									<a href="#" class="list-group-item">회원정보수정</a> 
+									<a href="#" class="list-group-item">비밀번호 변경</a> 
+									<a href="#"	class="list-group-item">회원탈퇴</a>
+								</div>
+							</div>
+						</div>
+
+							<div class="card">
+								<div class="card-header" role="tab" id="headingTwo">
+									<h5 class="mb-0">
+										<a class="list-group-item" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">예약 관리</a>
+									</h5>
+								</div>
+								<div id="collapseTwo" class="collapse" role="tabpanel"	aria-labelledby="headingTwo">
+									<div class="card-body">
+										<a href="#" class="list-group-item">현재 예약 목록</a> 
+										<a href="#"	class="list-group-item">장바구니</a> 
+										<a href="#"	class="list-group-item">위시리스트</a>
+									</div>
+								</div>
+							</div>
+
+								<div class="card">
+									<div class="card-header" role="tab" id="headingThree">
+										<h5 class="mb-0">
+											<a class="list-group-item" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">결제정보관리</a>
+										</h5>
+									</div>
+									<div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+										<div class="card-body">
+											<a href="#" class="list-group-item">About</a> 
+											<a href="#"	class="list-group-item">Services</a> 
+											<a href="#"	class="list-group-item">Contact</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- 여기서부터 본문 -->
+					<div >
+					
+					</div>
+					
+					
+				</div>
+				
+				
+				
+			</div>
+			<!-- Content Column -->
+
+		<!-- /.row -->
+	
+	<!-- /.container -->
+
+</body>
+
+</html>
