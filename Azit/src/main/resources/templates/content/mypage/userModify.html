@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<head>
+
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/sign.css">
+<!--===============================================================================================-->
+
+</head>
+<body>
+
+	<div class="container-mypage">
+		<table class="user-Modify-form">
+			<tr class="user-Modify-tr">
+				<td class="user-Modify-title">이름 : </td>
+				<td class="user-Modify-content"><p class="user-modify-input" type="text" id="userName" name="userName" th:text="${userName}" readonly/></td>
+			</tr>
+			<tr>
+				<td class="user-Modify-title">이메일 : </td>
+				<td class="user-Modify-content"><p class="user-modify-input" type="text" id="userEmail" name="userEmail" th:text="${userEmail}" readonly/></td>
+			</tr>
+			<tr>
+				<td class="user-Modify-title">전화번호 : </td>
+				<td class="user-Modify-content"><p class="user-modify-input" type="text" id="userPhone" name="userPhone" th:text="${userPhone}"/></td>
+			</tr>
+			<tr>
+				<td class="user-Modify-title">주소 : </td>
+				<td class="user-Modify-content"><p class="user-modify-input" type="text" id="userAddr" name="userAddr" th:text="${userAddr}"/></td>
+			</tr>
+		</table>		
+	</div>
+	
+	
+</body>
+
+</html>

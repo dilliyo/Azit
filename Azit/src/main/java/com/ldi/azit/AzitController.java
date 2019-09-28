@@ -44,7 +44,7 @@ public class AzitController {
 
 		m.put("nav", navService.getNav());
 		
-		m.put("template", "content/main");
+		m.put("content", "content/main");
 		m.put("key", "main");
 		
 		User signinUser = (User) session.getAttribute("check");
@@ -63,7 +63,7 @@ public class AzitController {
     public String space(ModelMap m) {
 		
 		m.put("nav", navService.getNav());
-		m.put("template", "content/space/space");
+		m.put("content", "content/space/space");
 		
 		
         return "index";
@@ -76,7 +76,7 @@ public class AzitController {
 		
 		m.put("nav", navService.getNav());
 		
-		m.put("template", "content/sign/signup");
+		m.put("content", "content/sign/signup");
 		m.put("key", "sign");
 		
 		return "index";
@@ -102,7 +102,7 @@ public class AzitController {
     public String signin(ModelMap m) {
 		
 		m.put("nav", navService.getNav());
-		m.put("template", "content/sign/signin");
+		m.put("content", "content/sign/signin");
 		m.put("key", "sign");
 		
         return "index";
@@ -135,7 +135,8 @@ public class AzitController {
 			
 			m.put("nav", navService.getNav());
 			
-			m.put("template", "content/mypage/mypage");
+			m.put("content", "content/mypage/mypage");
+			m.put("mypage", "content/mypage/userModify");
 			
 			
 			return "index";
@@ -145,19 +146,38 @@ public class AzitController {
 	    public String mypage(User u, ModelMap m, HttpSession session) {
 
 			m.put("nav", navService.getNav());
-			
-			m.put("template", "content/mypage/mypage");
+			m.put("mypage", "content/mypage/userModify");
+			m.put("content", "content/mypage/mypage");
 			
 			User signinUser = (User) session.getAttribute("check");
 			
 				if (signinUser != null){
 				
 					String Name = signinUser.getUserName();
-					
+					String Email = signinUser.getUserEmail();
+					String Phone = signinUser.getUserPhone();
+					String Birth = signinUser.getUserBirth();
+					String Addr = signinUser.getUserLocation();
+					m.put("signOn", "signOn");
 					m.put("userName", Name);
+					m.put("userEmail", Email);
+					m.put("userPhone", Phone);
+					m.put("userBirth", Birth);
+					m.put("userAddr", Addr);
 				}
 	        return "index";
 	    }
+		
+		@RequestMapping("/mypage/userModify")
+		public String userModify(ModelMap m) {
+			
+			m.put("nav", navService.getNav());
+			
+			m.put("mypage", "content/mypage/userModify");
+			
+			
+			return "mypage";
+		}
 
 	
 	
