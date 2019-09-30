@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+  layout:decorator="layout/defaultLayout">
+<body>
+	<!-- Script ¸ðÀ½ -->
+
+	<!-- Navigation -->
+	<th:block th:if="${signOn} != 'signOn'">
+		<nav th:replace="nav/nav-before"></nav>
+	</th:block>
+	<th:block th:unless="${signOn} != 'signOn'">
+		<nav th:replace="nav/nav-after"></nav>
+	</th:block>
+
+	<!-- Header -->
+	
+	<th:block th:if="${key} != 'main'" >
+		
+	</th:block>	
+	<th:block th:unless="${key} != 'main'" >
+		<header th:replace="header"></header>
+	</th:block>
+
+
+
+
+	<!-- Page Content -->
+
+	<th:block th:replace="${content}"></th:block>
+	
+	<!-- Footer -->
+	<th:block th:if="${key} == 'sign'" >
+		
+	</th:block>
+	<th:block th:unless="${key} == 'sign'" >
+	
+		<footer th:replace="footer"></footer>
+	</th:block>
+	</body>
+</html>

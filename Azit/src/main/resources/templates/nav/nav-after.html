@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<th:block th:include="include/include-nav-css"></th:block>
+
+
+<title> Azit </title>
+</head>
+<body>
+<th:block th:include="include/include-nav-js"></th:block>
+
+ <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top" th:fragment="nav_after">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+      	<img class="logo" src="img/logo/logo_1_02.png">
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+        <li th:each="n: ${nav}">
+        	<a class="nav-link" href="" th:href="@{/{navName}(navName=${n.navNameEn})}" th:text="${n.navNameKr}" ></a>
+        </li>
+        <li class="nav-item dropdown userbutton">
+            <a class="nav-link dropdown-toggle user_icon" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+            	<img src="img/icons/user_1.png" th:text="${userName}+ 님">
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+              <a class="dropdown-item" th:href="@{/mypage}" th:text="마이페이지">마이페이지</a>
+              <a class="dropdown-item" th:href="@{/signout}" th:text="로그아웃">로그아웃</a>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+	 
+</body>
+</html>

@@ -1,57 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+  layout:decorator="layout/defaultLayout">
 
-<head>
-
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="">
-<meta name="author" content="">
-
-<title>Azit</title>
-
-<!-- CSS 모음 -->
-<th:block th:include="include/include-link"></th:block>
-
-</head>
-
-<body>
-	<!-- Script 모음 -->
-	<th:block th:include="include/include-script"></th:block>
-
-	<!-- Navigation -->
-	<th:block th:if="${signOn} != 'signOn'">
-		<nav th:replace="nav/nav"></nav>
-	</th:block>
-	<th:block th:unless="${signOn} != 'signOn'">
-		<nav th:replace="nav/nav_before"></nav>
-	</th:block>
-
-	<!-- Header -->
-	
-	<th:block th:if="${key} != 'main'" >
-		
-	</th:block>	
-	<th:block th:unless="${key} != 'main'" >
-		<header th:replace="header"></header>
-	</th:block>
-
-
-
-
-	<!-- Page Content -->
-
-	<div th:replace="${content}"></div>
-	
-	<!-- Footer -->
-	<th:block th:if="${key} == 'sign'" >
-		
-	</th:block>
-	<th:block th:unless="${key} == 'sign'" >
-	
-		<footer th:replace="footer"></footer>
-	</th:block>
-
-</body>
+<head th:replace="head"></head>
+<body th:replace="body"></body>
 
 </html>

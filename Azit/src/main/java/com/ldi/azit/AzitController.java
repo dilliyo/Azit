@@ -135,7 +135,7 @@ public class AzitController {
 			
 			m.put("nav", navService.getNav());
 			
-			m.put("content", "content/mypage/mypage");
+			m.put("content", "content/mypage/mypage2");
 			m.put("mypage", "content/mypage/userModify");
 			
 			
@@ -147,7 +147,7 @@ public class AzitController {
 
 			m.put("nav", navService.getNav());
 			m.put("mypage", "content/mypage/userModify");
-			m.put("content", "content/mypage/mypage");
+			m.put("content", "content/mypage/mypage2");
 			
 			User signinUser = (User) session.getAttribute("check");
 			

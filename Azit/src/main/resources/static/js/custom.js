@@ -8,10 +8,8 @@ $(function(){
     subPage[0] = "space";
     subPage[1] = "space_add";
     subPage[2] = "search";
-    subPage[3] = "signup";
-    subPage[4] = "signin";
-    subPage[5] = "mypage";
-    subPage[6] = "qa";
+    subPage[3] = "signin";
+    subPage[4] = "mypage";
 
     var url = location.href;
    
@@ -20,8 +18,6 @@ $(function(){
     var getAr2 = url.indexOf(subPage[2]);
     var getAr3 = url.indexOf(subPage[3]);
     var getAr4 = url.indexOf(subPage[4]);
-    var getAr5 = url.indexOf(subPage[5]);
-    var getAr6 = url.indexOf(subPage[6]);
   
     if(getAr0 != -1){
         $("li a").addClass("on")
@@ -48,16 +44,6 @@ $(function(){
         $(".logo").addClass("on")
         $(".navbar").addClass("on")
     };
-    if(getAr5 != -1){
-    	$("li a").addClass("on")
-        $(".logo").addClass("on")
-        $(".navbar").addClass("on")
-    };
-    if(getAr6 != -1){
-    	$("li a").addClass("on")
-        $(".logo").addClass("on")
-        $(".navbar").addClass("on")
-    };
-    
+
 
 });
