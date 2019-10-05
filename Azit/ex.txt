@@ -1,0 +1,10 @@
+CREATE TALBE IF NOT EXISTS space
+(
+space_id varchar(100) not null primary key,
+spcae_name varchar(100) not null,
+space_addr varchar(100) not null,
+space_tel varchar(100) not null,
+space_category varchar(100) not null,
+space_tag varchar(100),
+space_content varchar(100)
+);

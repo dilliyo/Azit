@@ -9,12 +9,49 @@
   <meta name="author" content="">
 
   <title>Modern Business - Start Bootstrap Template</title>
+  
+  <th:block th:include="include/include-space-css"></th:block>
 
 </head>
 <body>
+	<div class="container">
+		<div class="wrap-space100 p-l-50 p-r-50 p-t-72 p-b-50">
+				<form class="space100-form validate-form" method="post" name="spaceAdd" th:action="@{spaceAdd/pro}">
+					<span class="space100-form-title p-b-59">
+						공간 등록
+					</span>
 
-	공간등록
-
+					<div class="wrap-input100 validate-input col-lg-6 col-md-6 col-12" data-validate="공간이름을 확인해주세요.">
+						<input class="input100" type="text" id="spaceName" name="spaceName" placeholder="공간 이름" autocomplete="off" required="required">
+						<span class="focus-input100"></span>
+						<font id="chkSpaceName" size="2"></font>
+					</div>
+					<div class="wrap-input100 validate-input col-lg-6 col-md-6 col-12" data-validate="공간종류를 확인해주세요.">
+						<input class="input100" type="text" id="spaceCategory" name="spaceCategory" placeholder="공간 종류" autocomplete="off" required="required">
+						<span class="focus-input100"></span>
+						<font id="chkSpaceName" size="2"></font>
+					</div>
+					<div class="wrap-input100 validate-input col-12" data-validate="공간태그를 확인해주세요.">
+						<input class="input100" type="text" id="spaceTag" name="spaceTag" placeholder="공간 태그" autocomplete="off" required="required">
+						<span class="focus-input100"></span>
+						<font id="chkSpaceName" size="2"></font>
+					</div>
+					<div class=" validate-input col-12" data-validate="내용을 확인해주세요.">
+						<span><i class="fa fa-pencil"></i></span>
+						<textarea class="input100" type="text" id="spaceContent" name="spaceContent" placeholder="내용을 입력하세요" autocomplete="off" required="required"></textarea>
+						<span class="focus-input100"></span>
+						<font id="chkSpaceName" size="2"></font>
+					</div>
+					
+				
+				<div class="col-12">
+					<div class="form-group button">	
+						<button type="submit" class="btn theme-2 effect">Send Message</button>
+				     </div>
+			    </div>
+			</form>
+		</div>
+	</div>
 </body>
 
 </html>

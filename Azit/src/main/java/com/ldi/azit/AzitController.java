@@ -66,6 +66,17 @@ public class AzitController {
     }
 	
 //공간등록
+
+	@RequestMapping("/spaceDetail")
+    public String spaceDetail(ModelMap m) {
+		
+		m.put("nav", navService.getNav());
+		m.put("content", "content/space/spaceDetail");
+				
+        return "index";
+    }
+	
+//공간등록
 	
 	@RequestMapping("/spaceAdd")
     public String spaceAdd(ModelMap m) {

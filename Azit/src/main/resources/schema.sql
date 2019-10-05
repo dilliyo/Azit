@@ -14,5 +14,5 @@ user_birthday varchar(100) not null,
 user_phone varchar(100) not null,
 user_addr varchar(100),
 user_date timestamp default now()
-
 );
+
