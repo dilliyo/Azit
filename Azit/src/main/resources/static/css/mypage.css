@@ -2617,6 +2617,8 @@ fieldset:disabled a.btn {
 .btn-primary {
   color: #534C4C;
   border-color: #534C4C;
+  margin-left:10px;
+  padding:4px;
 }
 
 .btn-primary:hover {
@@ -2632,8 +2634,8 @@ fieldset:disabled a.btn {
 
 .btn-primary.disabled, .btn-primary:disabled {
   color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: #534C4C;
+  border-color: #534C4C;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
@@ -4667,7 +4669,7 @@ input[type="button"].btn-block {
   }
   .navbar-expand-lg .navbar-nav .nav-link {
     padding-right: 0.5rem;
-    padding-left: 0.5rem;
+    padding-left: -0.5rem;
   }
   .navbar-expand-lg > .container,
   .navbar-expand-lg > .container-fluid {
@@ -4857,7 +4859,7 @@ input[type="button"].btn-block {
 .navbar-dark .navbar-nav .active > .nav-link,
 .navbar-dark .navbar-nav .nav-link.show,
 .navbar-dark .navbar-nav .nav-link.active {
-  color: #fff;
+  color: rgba(83,76,76, 0.5);
 }
 
 .navbar-dark .navbar-toggler {
@@ -4866,7 +4868,7 @@ input[type="button"].btn-block {
 }
 
 .navbar-dark .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(83, 76, 76)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 .navbar-dark .navbar-text {
@@ -10655,7 +10657,7 @@ body {
   vertical-align: 0;
   border: 0;
   font-weight: 900;
-  content: '\f105';
+  content: '\f107';
   font-family: 'Font Awesome 5 Free';
 }
 
@@ -10929,7 +10931,67 @@ body.sidebar-toggled footer.sticky-footer {
 }
 
 @media (min-width: 768px) {
-  body.sidebar-toggled footer.sticky-footer {
+  body.sidebar-toggled	 footer.sticky-footer {
     width: calc(100% - 90px);
   }
+    
+}
+
+#page-top{
+	margin-top:90px;
+	
+}
+
+@media (max-width: 1550px) { 
+	#page-top {
+	  padding-left:15%;
+	  padding-right:15%;
+
+	}
+}
+
+@media (max-width: 1300px) { 
+	#page-top {
+	  padding-left:10%;
+	  padding-right:10%;
+
+	}
+}
+
+
+@media (max-width: 1200px) { 
+	#page-top {
+	  padding-left:10%;
+	  padding-right:10%;
+
+	}
+}	
+
+@media (max-width: 990px) { 
+	#page-top {
+	  padding-left:10%;
+	  padding-right:10%;
+
+	}
+}
+
+@media (max-width: 660px) { 
+	#page-top {
+	  padding-left:00%;
+	  padding-right:00%;
+
+	}
+}
+
+.mypage-title{
+	padding-left:20px;
+	font-size:30px;
+}
+
+.mypage-navbar{
+	margin-bottom:30px;
+}
+
+.fa-bars:before{
+	color:#000;
 }

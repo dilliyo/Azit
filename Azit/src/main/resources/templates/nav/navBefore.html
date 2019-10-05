@@ -2,6 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
 <th:block th:include="include/include-nav-css"></th:block>
 
 
@@ -14,20 +17,29 @@
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top" th:fragment="nav-before">
     <div class="container">
       <a class="navbar-brand" href="/">
-      	<img class="logo" src="img/logo/logo_1_02.png">
+      	<img class="logo" th:src="@{/img/logo/logo_1_02.png}">
       </a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-        <li th:each="n: ${nav}">
-        	<a class="nav-link" href="" th:href="@{/{navName}(navName=${n.navNameEn})}" th:text="${n.navNameKr}" ></a>
-   
-        </li>
-        <li class="nav-item ">
-            <a class="nav-link" href="" th:href="@{/signin}" th:text="로그인"></a>
-          </li>
+			<li th:each="n: ${nav}">
+				<a class="nav-link" href="" th:href="@{/{navName}(navName=${n.navNameEn})}" th:text="${n.navNameKr}" ></a>
+			</li>
+			<li class="nav-item ">
+				<a class="nav-link" href="#saech" th:href="@{#search}" th:text="검색"></a>
+				<div id="search">
+					<button type="button" class="close">×</button>
+					<form>
+						<input type="search" value="" placeholder="type keyword(s) here" />
+						<button type="submit" class="searchBtn btn-primary">Search</button>
+					</form>
+				</div>
+			</li>
+			<li class="nav-item ">
+				<a class="nav-link" href="" th:href="@{/signin}" th:text="로그인"></a>
+			</li>
         </ul>
       </div>
     </div>

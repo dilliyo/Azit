@@ -90,7 +90,9 @@
 					
 					<!-- 여기서부터 본문 -->
 					
-					<div th:replace="${mypage}"></div>
+					<div th:replace="${mypage}">
+						<th:block th:replace="${mypage}"></th:block>
+					</div>
 					
 					<!-- 본문 끝  -->
 				</div>

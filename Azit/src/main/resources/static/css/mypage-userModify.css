@@ -1,0 +1,84 @@
+/*!
+ * Start Bootstrap - Modern Business (https://startbootstrap.com/template-overviews/modern-business)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
+ */
+
+
+.mypage-user-box{
+	width:100%;
+	padding:40px;
+	font-size:12px;
+}
+
+.mypage-user-icon{
+	width:50px;
+	height:auto;
+	float:left;
+	margin-right:10px;
+	margin-top:-10px;
+	
+}
+
+.user-modify-input{
+	
+	display: block;
+    font-family: Dotum,sans-serif;
+    font-size: 14px;
+    color: #555555;
+    line-height: 16px;
+    margin-bottom:0;
+    float:left;
+    margin-top: 9px;
+
+}
+
+.container-mypage{
+	width: 85%;
+}
+
+input {
+    outline: none;
+    border: none;
+}
+
+.user-Modify-form{
+	text-align:left;
+    width: 100%;
+    margin: 10%;
+
+}
+
+.user-Modify-title{
+	font-size: 12px;
+	font-weight:bold;
+	width:25%;	
+	border-right: 1px solid #e5e5e5;
+	background: #f9f9f9;
+	
+}
+
+.user-Modify-content{
+	
+}
+
+.user-Modify-tr{
+	    border: 0;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.contxt_desc{
+	font-size: 12px;
+	line-height: 19px;
+    padding-top: 10px;
+    color: #8e8e8e;
+    letter-spacing: -1px;
+}
+
+.tdcell{
+	padding:32px 0 32px 30px;
+}
+.thcell{
+	padding:32px 31px 32px;
+}

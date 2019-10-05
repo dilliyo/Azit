@@ -27,7 +27,9 @@
 
 	<!-- Page Content -->
 
-	<th:block th:replace="${content}"></th:block>
+	<th:block th:replace="${content}">
+			<th:block th:include="include/include-script"></th:block>
+	</th:block>
 	
 	<!-- Footer -->
 	<th:block th:if="${key} == 'sign'" >

@@ -3,7 +3,60 @@
   xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
   layout:decorator="layout/defaultLayout">
 
-<head th:replace="head"></head>
-<body th:replace="body"></body>
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title layout:title-pattern="$LAYOUT_TITLE : $CONTENT_TITLE">Azit</title>
+
+<!-- CSS 모음 -->
+ 	<th:block th:include="include/include-link"></th:block>
+ 	
+	
+</head>
+
+<body>
+<th:block th:include="include/include-script"></th:block>
+	<!-- Navigation -->
+	<th:block th:if="${signOn} != 'signOn'">
+		<nav th:replace="nav/navBefore"></nav>
+	</th:block>
+	<th:block th:unless="${signOn} != 'signOn'">
+		<nav th:replace="nav/navAfter"></nav>
+	</th:block>
+
+	<!-- Header -->
+	
+	<th:block th:if="${key} != 'main'" >
+		
+	</th:block>	
+	<th:block th:unless="${key} != 'main'" >
+		<header th:replace="header"></header>
+	</th:block>
+
+
+
+
+	<!-- Page Content -->
+
+	<th:block th:replace="${content}">
+			<!-- <th:block th:include="include/include-script"></th:block> -->
+	</th:block>
+	
+	<!-- Footer -->
+	<th:block th:if="${key} == 'sign'" >
+		
+	</th:block>
+	<th:block th:unless="${key} == 'sign'" >
+	
+		<footer th:replace="footer"></footer>
+	</th:block>
+	
+		<!-- Script 모음 -->
+
+	</body>
 
 </html>
