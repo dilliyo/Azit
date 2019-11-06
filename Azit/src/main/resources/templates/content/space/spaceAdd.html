@@ -10,48 +10,443 @@
 
   <title>Modern Business - Start Bootstrap Template</title>
   
-  <th:block th:include="include/include-space-css"></th:block>
+<!--  
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />  
 
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/i18n/jquery-ui-i18n.min.js"></script>
+ -->
+<th:block th:include="include/include-space-css"></th:block>
+<style type="text/css">
+.hasDatepicker{
+	z-index:999;
+}
+</style>
 </head>
+
 <body>
 	<div class="container">
-		<div class="wrap-space100 p-l-50 p-r-50 p-t-72 p-b-50">
-				<form class="space100-form validate-form" method="post" name="spaceAdd" th:action="@{spaceAdd/pro}">
-					<span class="space100-form-title p-b-59">
-						공간 등록
-					</span>
-
-					<div class="wrap-input100 validate-input col-lg-6 col-md-6 col-12" data-validate="공간이름을 확인해주세요.">
-						<input class="input100" type="text" id="spaceName" name="spaceName" placeholder="공간 이름" autocomplete="off" required="required">
-						<span class="focus-input100"></span>
-						<font id="chkSpaceName" size="2"></font>
-					</div>
-					<div class="wrap-input100 validate-input col-lg-6 col-md-6 col-12" data-validate="공간종류를 확인해주세요.">
-						<input class="input100" type="text" id="spaceCategory" name="spaceCategory" placeholder="공간 종류" autocomplete="off" required="required">
-						<span class="focus-input100"></span>
-						<font id="chkSpaceName" size="2"></font>
-					</div>
-					<div class="wrap-input100 validate-input col-12" data-validate="공간태그를 확인해주세요.">
-						<input class="input100" type="text" id="spaceTag" name="spaceTag" placeholder="공간 태그" autocomplete="off" required="required">
-						<span class="focus-input100"></span>
-						<font id="chkSpaceName" size="2"></font>
-					</div>
-					<div class=" validate-input col-12" data-validate="내용을 확인해주세요.">
-						<span><i class="fa fa-pencil"></i></span>
-						<textarea class="input100" type="text" id="spaceContent" name="spaceContent" placeholder="내용을 입력하세요" autocomplete="off" required="required"></textarea>
-						<span class="focus-input100"></span>
-						<font id="chkSpaceName" size="2"></font>
-					</div>
-					
+	   <h1 class="my-4">공간등록</h1>
+	<form>		            
+	<div class="mb-4" id="accordion" role="tablist" aria-multiselectable="true">
+		<div class="card">
+		  <div class="card-header" role="tab" id="headingOne">
+		    <h5 class="mb-0">
+		      <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">공간유형</a>
+		    </h5>
+		  </div>
+			<div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+				<div class="card-body">
+					<h2 class="info-text"> 어떤 공간을 공유하세요?</h2>
+						<h6 class="sub-info-text">등록하기 전 신중하게 공간유형을 선택해주세요!</h6>
+							<div class="row">
+								<div class="col-sm-12">
+									<div class="form-group">
+									<h4>모임장소</h4><br>
+										<ul class="add-space-category">
+											<li><input type="checkbox" id="meetingRoom" value="회의실"><label for="meetingRoom">회의실</label></li>
+											<li><input type="checkbox" id="workRoom" value="작업실"><label for="workRoom">작업실</label></li>
+											<li><input type="checkbox" id="partyRoom" value="파티룸"><label for="partyRoom">파티룸</label></li>
+											<li><input type="checkbox" id="theater" value="공연장"><label for="theater">공연장</label></li>
+											<li><input type="checkbox" id="practiceRoom" value="연습실"><label for="practiceRoom">연습실</label></li>
+											<li><input type="checkbox" id="multiRoom" value="다목적홀"><label for="multiRoom">다목적홀</label></li>
+											<li><input type="checkbox" id="seminarRoom" value="세미나실"><label for="seminarRoom">세미나실</label></li>
+											<li><input type="checkbox" id="leisure" value="레저시설"><label for="leisure">레저시설</label></li>
+											<li><input type="checkbox" id="MT" value="엠티장소"><label for="MT">엠티장소</label></li>
+											<li><input type="checkbox" id="studyRoom" value="스터디룸"><label for="studyRoom">스터디룸</label></li>
+											<li><input type="checkbox" id="cafe" value="카페"><label for="cafe">카페</label></li>
+										</ul> 
+									</div>
+								</div>
+							</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="card">
+			<div class="card-header" role="tab" id="headingTwo">
+				<h5 class="mb-0">
+					<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">기본정보
+					</a>
+				</h5>
+			</div>
+			<div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+				<div class="card-body">
 				
-				<div class="col-12">
-					<div class="form-group button">	
-						<button type="submit" class="btn theme-2 effect">Send Message</button>
-				     </div>
-			    </div>
-			</form>
+					<h2 class="info-text">기본 정보 </h2>
+					<div class="row">
+						<div class="col-sm-12 col-sm-offset-2">
+						
+							<div class="col-sm-12 col-sm-offset-2">
+								<div class="wrap-input100 validate-input space-add-input" data-validate="Name is required">
+									<label class="label-space-add-title">공간 명</label>
+									<input class="input100 add-input" type="text" id="spaceName" name="spaceName" placeholder="공간이름을 입력하세요" autocomplete="off" required="required">
+									<span class="focus-input100"></span>
+									<font id="chkName" size="2"></font>
+								</div>
+							</div>
+											                             
+							<div class="col-sm-12 col-sm-offset-2">
+								<div class="wrap-input100 validate-input space-add-input add-button-input" data-validate="Name is required">
+									<label class="label-space-add-title">공간 주소</label>
+									<input class="input100 add-input" type="text" id="spaceAddr1" name="spaceAddr1" placeholder="공간 주소를 입력해주세요." autocomplete="off" required="required">
+									<span class="focus-input100"></span>
+									<font id="chkName" size="2"></font>
+								</div>
+							</div>
+											
+							<div class="space-add-input-left add-button-input" data-validate="Name is required">
+								<input class="input100 add-input-button" type="button" value="등록"/>
+								<font id="chkName" size="2"></font>
+							</div>
+							<div class="col-sm-12 col-sm-offset-2">
+								<div class="wrap-input100 validate-input space-add-input add-input-addr2" data-validate="Name is required">
+									<input class="input100 add-input" type="text" id="spaceAddr2" name="spaceAddr2" placeholder="상세 주소를 입력해주세요." autocomplete="off" required="required">
+									<span class="focus-input100"></span>
+									<font id="chkName" size="2"></font>
+								</div>
+							</div>
+											                             
+							<div class="col-sm-12 col-sm-offset-2">
+								<div class="wrap-input100 validate-input space-add-input" data-validate="Name is required">
+									<label class="label-space-add-title">공간 한줄 소개</label>
+									<input class="input100 add-input" type="text" id="spaceOnelineInfo" name="spaceOnelineInfo" placeholder="공간을 소개하는 한줄 문장을 입력해주세요." autocomplete="off" required="required">
+									<span class="focus-input100"></span>
+									<font id="chkName" size="2"></font>
+								</div>
+							</div>
+											
+							<div class="col-sm-12 col-sm-offset-2">
+								<div class="wrap-input100 validate-input space-add-input" data-validate="Name is required">
+									<label class="label-space-add-title">공간 소개</label>
+									<input class="input100 add-input" type="text" id="spaceInfo" name="spaceInfo" placeholder="공간을 소개하는 글을 입력해주세요." autocomplete="off" required="required">
+									<span class="focus-input100"></span>
+									<font id="chkName" size="2"></font>
+								</div>
+							</div>
+											                             
+							<div class="col-sm-12 col-sm-offset-2">
+								<div class="wrap-input100 validate-input space-add-input add-button-input" data-validate="Name is required">
+									<label class="label-space-add-title">공간태그</label>
+									<input class="input100 add-input" type="text" id="spaceTag" name="spaceTag" placeholder="태그를 입력해주세요." autocomplete="off" required="required">
+									<span class="focus-input100"></span>
+									<font id="chkName" size="2"></font>
+								</div>
+								<div class="space-add-input-left add-button-input" data-validate="Name is required">
+									<input class="input100 add-input-button" type="button" value="추가"/>
+									<font id="chkName" size="2"></font>
+								</div>
+							</div>
+									                             
+							<div class="col-sm-12 col-sm-offset-2">
+								<div class="wrap-input100 validate-input space-add-input add-button-input" data-validate="Name is required">
+									<label class="label-space-add-title">시설안내</label>
+									<input class="input100 add-input" type="text" id="userName" name="userName" placeholder="최대 10개까지 작성가능합니다." autocomplete="off" required="required">
+									<span class="focus-input100"></span>
+									<font id="chkName" size="2"></font>
+								</div>
+								<div class="space-add-input-left add-button-input" data-validate="Name is required">
+									<input class="input100 add-input-button" type="button" value="추가"/>
+									<font id="chkName" size="2"></font>
+								</div>
+							</div>
+										
+							<div class="col-sm-12 col-sm-offset-2">
+								<div class="wrap-input100 validate-input space-add-input add-button-input" data-validate="Name is required">
+									<label class="label-space-add-title">예약시 주의사항</label>
+									<input class="input100 add-input" type="text" id="userName" name="userName" placeholder="최대 10개까지 작성가능합니다." autocomplete="off" required="required">
+									<span class="focus-input100"></span>
+									<font id="chkName" size="2"></font>
+								</div>
+								<div class="space-add-input-left add-button-input" data-validate="Name is required">
+									<input class="input100 add-input-button" type="button" value="추가"/>
+									<font id="chkName" size="2"></font>
+								</div>
+							</div>
+											                             
+							<div class="col-sm-12 col-sm-offset-2">
+								<div class="wrap-input100 validate-input space-add-input" data-validate="Name is required">
+									<label class="label-space-add-title">웹사이트</label>
+									<input class="input100 add-input" type="text" id="userName" name="userName" placeholder="웹사이트 URL을 입력해주세요. ( 예시 : http://azit.com )" autocomplete="off" required="required">
+									<span class="focus-input100"></span>
+									<font id="chkName" size="2"></font>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="card">
+			<div class="card-header" role="tab" id="headingThree">
+				<h5 class="mb-0">
+				<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">대표 이미지</a>
+				</h5>
+			</div>
+			
+			<div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+				<div class="card-body">
+				          
+				           <h2 class="info-text">대표 이미지</h2>
+	                       <div class="row">
+	                           <div class="col-sm-5 col-sm-offset-1">
+	                           	<div class="form-group">
+	                               	<label>Your place is good for</label>
+	                               	<select class="form-control">
+	                                    <option disabled="" selected="">- type -</option>
+	                                    <option>Business</option>
+	                                    <option>Vacation </option>
+	                                    <option>Work</option>
+	                               	</select>
+	                           	</div>
+	                           </div>
+	                           <div class="col-sm-5">
+	                           	<div class="form-group">
+	                               	<label>Is air conditioning included ?</label>
+	                               	<select class="form-control">
+	                                    <option disabled="" selected="">- response -</option>
+	                                    <option>Yes</option>
+	                                    <option>No </option>
+	                               	</select>
+	                           	</div>
+	                           </div>
+	                           <div class="col-sm-5 col-sm-offset-1">
+	                           	<div class="form-group">
+	                               	<label>Does your place have wi-fi?</label>
+	                               	<select class="form-control">
+	                                    <option disabled="" selected="">- response -</option>
+	                                    <option>Yes</option>
+	                                    <option>No </option>
+	                               	</select>
+	                           	</div>
+	                           </div>
+	                           <div class="col-sm-5">
+	                           	<div class="form-group">
+	                               	<label>Is breakfast included?</label>
+	                               	<select class="form-control">
+	                                    <option disabled="" selected="">- response -</option>
+	                                    <option>Yes</option>
+	                                    <option>No </option>
+	                               	</select>
+	                           	</div>
+	                           </div>
+	                       </div>
+				          
+				</div>
+			</div>
+		</div>
+		
+		<div class="card">
+			<div class="card-header" role="tab" id="headingFour">
+				<h5 class="mb-0">
+				<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">연락처 정보
+				</a>
+				</h5>
+			</div>
+			<div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
+				<div class="card-body">
+					<h2 class="info-text">연락처 정보 </h2>
+					<div class="row">
+					<div class="col-sm-12 col-sm-offset-2">
+					
+						<div class="col-sm-12 col-sm-offset-2">
+							<div class="wrap-input100 validate-input space-add-input add-input-email1" data-validate="Name is required">
+								<label class="label-space-add-title">이메일</label>
+								<input class="input100 add-input" type="text" id="userName" name="userName" placeholder="" autocomplete="off" required="required">
+								<span class="focus-input100"></span>
+								<font id="chkName" size="2"></font>
+							</div>
+							
+							<div class="space-add-input-left space-add-input add-input-email2">
+								<label class="label-space-add-title"></label>
+								<p class="add-input-email22">@</p>
+							</div>
+								
+							<div class="wrap-input100 validate-input space-add-input-left space-add-input add-input-email3" data-validate="Name is required">
+								<label class="label-space-add-title"></label>
+								<input class="input100 add-input" type="text" id="userName" name="userName" placeholder="" autocomplete="off" required="required">
+								<span class="focus-input100"></span>
+								<font id="chkName" size="2"></font>
+							</div>
+							
+							<div class="space-add-input-left add-button-input add-input-email4" data-validate="Name is required">
+								<select class="form-control">
+									<option disabled="" selected="">- 선택 -</option>
+									<option>네이버</option>
+									<option>다음 </option>
+									<option>직접입력</option>
+								</select>
+								<font id="chkName" size="2"></font>
+							</div>
+						</div>
+						
+						<div class="col-sm-6 col-sm-offset-2">
+							<div class="space-add-input-left add-input-phone1" data-validate="Name is required">
+								<label class="label-space-add-title">휴대폰</label>
+								<select class="form-control">
+									<option disabled="" selected="">- 선택 -</option>
+									<option>010</option>
+									<option>020</option>
+									<option>030</option>
+								</select>
+								<font id="chkName" size="2"></font>
+							</div>
+							                             	
+							<div class="space-add-input add-input-phone2">
+								<p class="add-input-phone22">-</p>
+							</div>
+							                             	
+							<div class="wrap-input100 validate-input space-add-input add-input-phone3" data-validate="Name is required">
+								<input class="input100 add-input-phone" type="text" id="userName" name="userName" placeholder="" autocomplete="off" required="required" maxlength="4">
+								<span class="focus-input100"></span>
+								<font id="chkName" size="2"></font>
+							</div>
+							
+							<div class="space-add-input add-input-phone2">
+								<p class="add-input-phone22">-</p>
+							</div>
+							
+							<div class="wrap-input100 validate-input space-add-input add-input-phone3" data-validate="Name is required">
+								<input class="input100 add-input-phone" type="text" id="userName" name="userName" placeholder="" autocomplete="off" required="required" maxlength="4">
+								<span class="focus-input100"></span>
+								<font id="chkName" size="2"></font>
+							</div>
+						</div>
+						
+						<div class="col-sm-6 col-sm-offset-2">
+							<div class="space-add-input-left add-input-phone1" data-validate="Name is required">
+								<label class="label-space-add-title">대표전화</label>
+								<select class="form-control">
+									<option disabled="" selected="">- 선택 -</option>
+									<option>010</option>
+									<option>020</option>
+									<option>030</option>
+								</select>
+								<font id="chkName" size="2"></font>
+							</div>
+							
+							<div class="space-add-input add-input-phone2">
+								<p class="add-input-phone22">-</p>
+							</div>
+							                             	
+							<div class="wrap-input100 validate-input space-add-input add-input-phone3" data-validate="Name is required">
+								<input class="input100 add-input-phone" type="text" id="userName" name="userName" placeholder="" autocomplete="off" required="required" maxlength="4">
+								<span class="focus-input100"></span>
+								<font id="chkName" size="2"></font>
+							</div>
+							
+							<div class="space-add-input add-input-phone2">
+								<p class="add-input-phone22">-</p>
+							</div>
+							
+							<div class="wrap-input100 validate-input space-add-input add-input-phone3" data-validate="Name is required">
+								<input class="input100 add-input-phone" type="text" id="userName" name="userName" placeholder="" autocomplete="off" required="required" maxlength="4">
+								<span class="focus-input100"></span>
+								<font id="chkName" size="2"></font>
+							</div>
+						</div>
+					</div>
+				
+				</div>
+			</div>
 		</div>
 	</div>
+	
+	<div class="card">
+			<div class="card-header" role="tab" id="headingFive">
+				<h5 class="mb-0">
+				<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">운영 일정 관리</a>
+				</h5>
+			</div>
+			
+			<div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive">
+				<div class="card-body">
+				          
+				           <h2 class="info-text">이용 정보를 입력해주세요.</h2>
+	                       <div class="row">
+	                           <div class="col-sm-5 col-sm-offset-2">
+	                           	<div class="form-group">
+	                               	<label class="label-space-add-title">이용시간</label>
+	                               	<select class="form-control useTime">
+	                                    <option disabled="" selected="">- 시간 -</option>
+	                                    <option>0시</option>
+	                                    <option>1시</option>
+	                                    <option>2시</option>
+	                                    <option>3시</option>
+	                                    <option>4시</option>
+	                                    <option>5시</option>
+	                                    <option>6시</option>
+	                                    <option>7시</option>
+	                                    <option>8시</option>
+	                                    <option>9시</option>
+	                                    <option>10시</option>
+	                                    <option>11시</option>
+	                                    <option>12시</option>
+	                               	</select>
+	                               	<div class="useTime2">부터</div>
+	                               	<select class="form-control useTime3">
+	                                    <option disabled="" selected="">- 시간 -</option>
+	                                    <option>0시</option>
+	                                    <option>1시</option>
+	                                    <option>2시</option>
+	                                    <option>3시</option>
+	                                    <option>4시</option>
+	                                    <option>5시</option>
+	                                    <option>6시</option>
+	                                    <option>7시</option>
+	                                    <option>8시</option>
+	                                    <option>9시</option>
+	                                    <option>10시</option>
+	                                    <option>11시</option>
+	                                    <option>12시</option>
+	                               	</select>
+	                           	</div>
+	                           </div>
+	                           <div class="col-sm-5 col-sm-offset-2">
+	                           	<div class="form-group">
+	                               	<label class="label-space-add-title">정기 휴무</label>
+	                               	<select class="form-control">
+	                                    <option disabled="" selected="">- 선택 -</option>
+	                                    <option>휴무없음</option>
+	                                    <option>매주 월요일</option>
+	                                    <option>매주 화요일</option>
+	                                    <option>매주 수요일</option>
+	                                    <option>매주 목요일</option>
+	                                    <option>매주 금요일</option>
+	                                    <option>매주 토요일</option>
+	                                    <option>매주 일요일</option>
+	                               	</select>
+	                           	</div>
+	                           </div>
+	                           </div>
+	                           <h2 class="info-text">지정 휴무일 추가</h2>
+	                           <div class="row">
+	                           <div class="col-sm-12 col-sm-offset-1">
+	                           	<div class="form-group">
+	                           		<div class="appoint-holiday-list">
+	                           		 <span id="extcount" style="color: #ff0000; font: 20px verdana,dotum;">(0개)</span>
+	                           			<!-- <input class="appoint-holiday-add" id="appoint-holiday-save" type="button" value="저장"/> -->
+	                           			
+	          							<!-- <input type="text" id="datepicker" class="hddp" readonly="readonly" placeholder="날짜"> -->                  			
+	                           			
+	                           		</div>
+	                           		<input class="appoint-holiday-add" id="appoint-holiday-add" type="button" value="추 가  +"/>
+	                           	</div>
+	                           </div>
+	                       </div>
+				          
+				</div>
+			</div>
+		</div>
+		</div>
+		</form>
+</div>
+	
+	<th:block th:include="include/include-space-js"></th:block>
+
 </body>
+
 
 </html>
